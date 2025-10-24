@@ -99,7 +99,7 @@ async function run() {
         }
       }
       const result=await userCollection.updateOne(filter,updatedDoc);
-      req.send(result);
+      res.send(result);
     })
 
     app.delete('/users/:id',async(req,res)=>{
@@ -125,6 +125,4 @@ app.get('/',(req,res)=>{
     res.send('Coffee making server is running');
 })
 
-app.listen(port,()=>{
-    console.log(`Coffee making server is running in port ${port}`);
-})
+module.exports = app;
